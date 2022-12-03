@@ -16,7 +16,7 @@ public class Solver extends Base {
     this.position = 0;
     this.depth = 0;
     for (String line: getInput()) {
-      applyCommand1(line);
+      applyCommand(line, 1);
     }
     return Integer.toString(this.position * this.depth);
   }
@@ -26,14 +26,18 @@ public class Solver extends Base {
     this.depth = 0;
     this.aim = 0;
     for (String line: getInput()) {
-      applyCommand2(line);
+      applyCommand(line, 2);
     }
     return Integer.toString(this.position * this.depth);
   }
 
-  private void applyCommand1(String command) {
+  private void applyCommand(String command, int number) {
     String[] move = command.split(" ");
-    applyMove1(move[0], move[1]);
+    if (number == 1) {
+      applyMove1(move[0], move[1]);
+    } else {
+      applyMove2(move[0], move[1]);
+    }
   }
 
   private void applyMove1(String instruction, String stringValue) {
@@ -47,11 +51,6 @@ public class Solver extends Base {
         this.depth -= value;
       }
     }
-  }
-
-  private void applyCommand2(String command) {
-    String[] move = command.split(" ");
-    applyMove2(move[0], move[1]);
   }
 
   private void applyMove2(String instruction, String stringValue) {
