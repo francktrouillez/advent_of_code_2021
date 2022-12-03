@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+day="${1:0-1}"
+
+[ -d "$1" ] && exit
+
+mkdir -p $1
+cp -ar ./template/* ./$1/
+
+echo "#!/bin/bash
+
+echo \"=========\"
+echo \"= Day $day =\"
+echo \"=========\"
+echo \"\"
+
+cd \"\$(dirname \"\$0\")\"
+
+make > ./logs/make.log && cd bin
+java Main
+cd .." > ./$1/run
