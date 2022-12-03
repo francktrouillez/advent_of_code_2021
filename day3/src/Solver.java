@@ -28,8 +28,8 @@ public class Solver extends Base {
     this.lineSize = getInput().get(0).length();
     this.inputSize = getInput().size();
 
-    int o2 = generateRateO2();
-    int co2 = generateRateCO2();
+    int o2 = generateRate2('1');
+    int co2 = generateRate2('0');
 
     return Integer.toString(o2 * co2);
   }
@@ -38,7 +38,7 @@ public class Solver extends Base {
     List<String> representation = new ArrayList<String>();
     for (int i = 0; i < lineSize; i++) {
       final int index = i;
-      if (getInput().stream().filter(e -> e.charAt(index) == value).collect(Collectors.toList()).size() > (double)(inputSize) / 2) {
+      if (getInput().stream().filter(e -> e.charAt(index) == value).collect(Collectors.toList()).size() >= (double)(inputSize) / 2) {
         representation.add("1");
       } else {
         representation.add("0");
@@ -47,35 +47,26 @@ public class Solver extends Base {
     return Integer.parseInt(String.join("", representation), 2);
   }
 
-  private int generateRateO2() {
+  private int generateRate2(char preference) {
     List<String> remainingRows = getInput();
+    int modifier = Character.getNumericValue(preference) * 2 - 1;
+    double conditionalExpression;
+    char choice;
     for (int i = 0; i < lineSize; i++) {
       if (remainingRows.size() == 1) {
         break;
       }
-      final int index = i;
-      if (remainingRows.stream().filter(e -> e.charAt(index) == '1').collect(Collectors.toList()).size() >= (double)(remainingRows.size()) / 2) {
-        remainingRows = remainingRows.stream().filter(e -> e.charAt(index) == '1').collect(Collectors.toList());
+      final int finalI = i;
+      conditionalExpression = remainingRows.stream().filter(e -> e.charAt(finalI) == '1').collect(Collectors.toList()).size() * modifier - (double)(remainingRows.size()) / 2 * modifier;
+      if (conditionalExpression > 0) {
+        choice = '1';
+      } else if (conditionalExpression == 0) {
+        choice = preference;
       } else {
-        remainingRows = remainingRows.stream().filter(e -> e.charAt(index) == '0').collect(Collectors.toList());
+        choice = '0';
       }
-    }
-    String representation = remainingRows.get(0);
-    return Integer.parseInt(representation, 2);
-  }
-
-  private int generateRateCO2() {
-    List<String> remainingRows = getInput();
-    for (int i = 0; i < lineSize; i++) {
-      if (remainingRows.size() == 1) {
-        break;
-      }
-      final int index = i;
-      if (remainingRows.stream().filter(e -> e.charAt(index) == '1').collect(Collectors.toList()).size() < (double)(remainingRows.size()) / 2) {
-        remainingRows = remainingRows.stream().filter(e -> e.charAt(index) == '1').collect(Collectors.toList());
-      } else {
-        remainingRows = remainingRows.stream().filter(e -> e.charAt(index) == '0').collect(Collectors.toList());
-      }
+      final char finalChoice = choice;
+      remainingRows = remainingRows.stream().filter(e -> e.charAt(finalI) == finalChoice).collect(Collectors.toList());
     }
     String representation = remainingRows.get(0);
     return Integer.parseInt(representation, 2);
