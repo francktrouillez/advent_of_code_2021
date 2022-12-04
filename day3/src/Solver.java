@@ -10,7 +10,7 @@ public class Solver extends Base {
   private int lineSize;
   private int inputSize;
 
-  public Solver(boolean isTest) throws IOException{
+  public Solver(boolean isTest) throws IOException {
     super(isTest);
   }
 

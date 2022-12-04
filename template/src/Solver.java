@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Solver extends Base {
 
-  public Solver(boolean isTest) throws IOException{
+  public Solver(boolean isTest) throws IOException {
     super(isTest);
   }
 

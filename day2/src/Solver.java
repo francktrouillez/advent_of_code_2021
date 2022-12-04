@@ -8,7 +8,7 @@ public class Solver extends Base {
   private int depth;
   private int aim;
 
-  public Solver(boolean isTest) throws IOException{
+  public Solver(boolean isTest) throws IOException {
     super(isTest);
   }
 

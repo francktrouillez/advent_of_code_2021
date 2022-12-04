@@ -9,7 +9,7 @@ public class Solver extends Base {
 
   List<Board> boards = new ArrayList<>();
 
-  public Solver(boolean isTest) throws IOException{
+  public Solver(boolean isTest) throws IOException {
     super(isTest);
   }
 
