@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 public class Solver extends Base {
 
-  public Solver() throws IOException{
-    super();
+  public Solver(boolean isTest) throws IOException{
+    super(isTest);
   }
 
   public String generateOutput1() {
@@ -47,4 +47,5 @@ public class Solver extends Base {
   private int getSum(List<Integer> values) {
     return values.stream().reduce(0, (acc, e) -> acc + e);
   }
+
 }

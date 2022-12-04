@@ -8,8 +8,8 @@ public class Solver extends Base {
   int depth;
   int aim;
 
-  public Solver() throws IOException{
-    super();
+  public Solver(boolean isTest) throws IOException{
+    super(isTest);
   }
 
   public String generateOutput1() {
@@ -66,4 +66,5 @@ public class Solver extends Base {
       }
     }
   }
+
 }

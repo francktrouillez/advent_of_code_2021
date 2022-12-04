@@ -10,8 +10,8 @@ public class Solver extends Base {
   int lineSize;
   int inputSize;
 
-  public Solver() throws IOException{
-    super();
+  public Solver(boolean isTest) throws IOException{
+    super(isTest);
   }
 
   public String generateOutput1() {

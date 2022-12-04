@@ -9,16 +9,20 @@ abstract public class Base {
   private String output1;
   private String output2;
 
-  public Base() throws IOException {
-    this.input = FileHandler.read("../input.txt");
+  public Base(boolean isTest) throws IOException {
+    this.input = FileHandler.read(isTest ? "../test/input.txt" : "../input.txt");
   }
 
   public void writeOutput() throws IOException {
-    FileHandler.write("../output.txt", "Output 1 : " + getOutput1() + "\nOutput 2 : " + getOutput2());
+    FileHandler.write("../output.txt", getOutput());
   }
 
   public void printOutput() {
-    System.out.println("Output 1 : " + getOutput1() + "\nOutput 2 : " + getOutput2());
+    System.out.println(getOutput());
+  }
+
+  public String getOutput() {
+    return "Output 1 : " + getOutput1() + "\nOutput 2 : " + getOutput2();
   }
 
   protected List<String> getInput() {
@@ -26,18 +30,16 @@ abstract public class Base {
   }
 
   private String getOutput1() {
-    if (this.output1 != null) {
-      return this.output1;
+    if (this.output1 == null) {
+      this.output1 = generateOutput1();
     }
-    this.output1 = generateOutput1();
     return this.output1;
   }
 
   private String getOutput2() {
-    if (this.output2 != null) {
-      return this.output2;
+    if (this.output2 == null) {
+      this.output2 = generateOutput2();
     }
-    this.output2 = generateOutput2();
     return this.output2;
   }
 

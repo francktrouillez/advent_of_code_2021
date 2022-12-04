@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class Solver extends Base {
 
-  public Solver() throws IOException{
-    super();
+  public Solver(boolean isTest) throws IOException{
+    super(isTest);
   }
 
   public String generateOutput1() {

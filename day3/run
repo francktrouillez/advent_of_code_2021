@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "========="
-echo "= Day 3 ="
-echo "========="
+echo "============"
+echo "== Day 03 =="
+echo "============"
 echo ""
 
 cd "$(dirname "$0")"
