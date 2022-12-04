@@ -6,7 +6,7 @@ import java.util.Map;
 
 
 public class Board {
-  final private int BOARD_SIZE = 5;
+  final static private int BOARD_SIZE = 5;
 
   private boolean boardCompletion[][] = new boolean[BOARD_SIZE][BOARD_SIZE];
   private Map<Integer, int[]> boardPositions = new HashMap<>();
