@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "============"
+echo "== Day 07 =="
+echo "============"
+echo ""
+
+cd "$(dirname "$0")"
+
+make > ./logs/make.log && cd bin
+java Main
+cd ..
