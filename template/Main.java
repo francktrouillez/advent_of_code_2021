@@ -15,12 +15,12 @@ public class Main {
 
     System.out.println("## Testing ##");
     System.out.println("- Expected -");
-    String expectedOutput = String.join("\n", FileHandler.read("../test/output.txt"));
+    String expectedOutput = String.join("\n", FileHandler.read("../test/output.txt")).strip();
     System.out.println(expectedOutput);
     System.out.println("-- Actual --");
     System.out.println(solver.getOutput());
     System.out.println("-- Assert --");
-    boolean isTestOk = expectedOutput.equals(solver.getOutput());
+    boolean isTestOk = expectedOutput.equals(solver.getOutput().strip());
     System.out.println(isTestOk ? "   - OK -   " : " - NOT OK - ");
     System.out.println("#############");
     if (!isTestOk) {
