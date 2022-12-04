@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class Solver extends Base {
 
-  int position;
-  int depth;
-  int aim;
+  private int position;
+  private int depth;
+  private int aim;
 
   public Solver(boolean isTest) throws IOException{
     super(isTest);

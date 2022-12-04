@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 
 public class Solver extends Base {
 
-  int lineSize;
-  int inputSize;
+  private int lineSize;
+  private int inputSize;
 
   public Solver(boolean isTest) throws IOException{
     super(isTest);
