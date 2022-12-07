@@ -1,8 +1,6 @@
 package src;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Solver extends Base {
   final static private int INITIAL_TIMER = 8;
