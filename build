@@ -3,12 +3,12 @@
 cd "$(dirname "$0")"
 
 raw_day="$(echo "$1" | grep -o '[0-9]\+')"
-day="$(printf "%02d\n" $raw_day)"
+[[ ${#raw_day} -gt 1 ]] && day="$raw_day" || day="$(printf "%02d\n" $raw_day)"
 
-[ -d "$1" ] && exit
+[ -d "day$day" ] && exit
 
-mkdir -p $1
-cp -ar ./template/* ./$1/
+mkdir -p "day$day"
+cp -ar ./template/* "./day$day/"
 
 echo "#!/bin/bash
 
