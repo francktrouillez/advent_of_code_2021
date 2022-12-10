@@ -18,7 +18,7 @@ public class Main {
     String expectedOutput = String.join("\n", FileHandler.read("../test/output.txt")).strip();
     System.out.println(expectedOutput);
     System.out.println("-- Actual --");
-    System.out.println(solver.getOutput());
+    System.out.println(solver.getOutput().strip());
     System.out.println("-- Assert --");
     boolean isTestOk = expectedOutput.equals(solver.getOutput().strip());
     System.out.println(isTestOk ? "   - OK -   " : " - NOT OK - ");

@@ -18,7 +18,7 @@ abstract public class Base {
   }
 
   public void printOutput() {
-    System.out.println(getOutput());
+    System.out.println(getOutput().strip());
   }
 
   public String getOutput() {
