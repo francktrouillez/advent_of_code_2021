@@ -1,2 +1,4 @@
-Output 1 : 6311
-Output 2 : 19929
+Output 1 :
+6311
+Output 2 :
+19929

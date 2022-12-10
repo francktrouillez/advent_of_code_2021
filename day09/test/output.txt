@@ -1,2 +1,4 @@
-Output 1 : 15
-Output 2 : 1134
+Output 1 :
+15
+Output 2 :
+1134

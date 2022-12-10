@@ -1,2 +1,4 @@
-Output 1 : 845186
-Output 2 : 4636702
+Output 1 :
+845186
+Output 2 :
+4636702

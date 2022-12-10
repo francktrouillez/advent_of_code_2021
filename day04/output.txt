@@ -1,2 +1,4 @@
-Output 1 : 55770
-Output 2 : 2980
+Output 1 :
+55770
+Output 2 :
+2980

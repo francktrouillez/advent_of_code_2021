@@ -1,2 +1,4 @@
-Output 1 : 340056
-Output 2 : 96592275
+Output 1 :
+340056
+Output 2 :
+96592275

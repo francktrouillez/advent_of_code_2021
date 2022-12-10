@@ -22,7 +22,7 @@ abstract public class Base {
   }
 
   public String getOutput() {
-    return "Output 1 : " + getOutput1() + "\nOutput 2 : " + getOutput2();
+    return "Output 1 :\n" + getOutput1() + "\nOutput 2 :\n" + getOutput2();
   }
 
   protected List<String> getInput() {
